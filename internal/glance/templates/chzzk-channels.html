@@ -1,0 +1,21 @@
+{{ template "widget-base.html" . }}
+
+{{ define "widget-content" }}
+<ul class="list list-gap-14 collapsible-container" data-collapse-after="{{ .CollapseAfter }}">
+    {{ range .Channels }}
+    <li>
+        <div class="flex gap-10 items-center thumbnail-parent" style="width: 100%;">
+            <div style="width: 4.4rem; height: 4.4rem; border: 2px solid var(--color-text-subdue); padding: 2px; border-radius: 50%; position: relative; flex-shrink: 0; overflow: hidden;">
+                <a href="https://chzzk.naver.com/live/{{ .ChannelId }}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%;">
+                    <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" src="{{ .AvatarUrl }}" alt="{{ .Name }}" loading="lazy">
+                </a>
+            </div>
+            <div style="flex: 1; min-width: 0; overflow: hidden;">
+                <a href="https://chzzk.naver.com/live/{{ .ChannelId }}" class="size-h3 block text-truncate" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: none;">{{ .Name }}</a>
+                <div class="text-truncate block" style="color: var(--color-text-subdue);">{{ .FollowerCount }} followers</div>
+            </div>
+        </div>
+    </li>
+    {{ end }}
+</ul>
+{{ end }} 
