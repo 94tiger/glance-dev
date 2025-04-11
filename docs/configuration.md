@@ -37,6 +37,7 @@
   - [Markets](#markets)
   - [Twitch Channels](#twitch-channels)
   - [Twitch Top Games](#twitch-top-games)
+  - [Chzzk Channels](#chzzk-channels)
   - [iframe](#iframe)
   - [HTML](#html)
 
@@ -2457,6 +2458,43 @@ The maximum number of games to show.
 
 ##### `collapse-after`
 How many games are visible before the "SHOW MORE" button appears. Set to `-1` to never collapse.
+
+### chzzk-channels
+
+Display a list of channels from Chzzk.
+
+Example:
+
+```yaml
+- type: chzzk-channels
+  client-id: "client-id"  # 네이버 개발자 센터에서 발급받은 클라이언트 ID  
+  client-secret: "client-secret"  # 네이버 개발자 센터에서 발급받은 클라이언트 시크릿
+  channels:
+    - "bb382c2c0cc9fa7c86ab3b037fb5799c"  # 치지직 채널 ID
+    - "8a59b34b46271960c1bf172bb0fac758"
+    - "089185efc29a8fbe14ea294dc85f9661"
+```
+
+Preview:
+
+![](images/chzzk-channels-widget-preview.png)
+
+#### Properties
+| Name | Type | Required | Default |
+| ---- | ---- | -------- | ------- |
+| channels | array | yes | |
+| collapse-after | integer | no | 5 |
+| sort-by | string | no | viewers |
+
+##### `channels`
+A list of channels to display.
+
+##### `collapse-after`
+How many channels are visible before the "SHOW MORE" button appears. Set to `-1` to never collapse.
+
+##### `sort-by`
+Can be used to specify the order in which the channels are displayed. Possible values are `viewers` and `live`.
+
 
 ### iframe
 Embed an iframe as a widget.
